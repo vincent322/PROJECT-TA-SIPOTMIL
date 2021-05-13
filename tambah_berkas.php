@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     $save_file = strtolower($kode) . "." . $ekstensi;
 
     # move uploaded file to server filepath.
-    move_uploaded_file($tmp_name, '../../../upload/' . $save_file);
+    move_uploaded_file($tmp_name, 'uploads' . $save_file);
 	
 
 	$cek = mysqli_query($koneksi, "SELECT * FROM berkas WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
