@@ -94,6 +94,10 @@
             # code...
             include 'tambah_berkas.php';
             break;
+          case 'data_berkas':
+            # code...
+            include 'data_berkas.php';
+            break;
           case 'edit_berkas':
             # code...
             include 'edit_berkas.php';
