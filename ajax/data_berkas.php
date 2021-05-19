@@ -21,13 +21,12 @@ $result = mysqli_query($koneksi, $query);
 		<form action="" method="post">
 			<div class="item form-group">
 				<div class="col-md-6 col-sm-6 ">
-					<input type="text" name="keyword" class="form-control" size="4" autofocus placeholder="keyword" autocomplete="off" id="keyword">
-					<button type="submit" name="cari" id="tombol-cari">Cari</button>
+					<input type="text" name="keyword" class="form-control" size="4" autofocus placeholder="Cari Data" autocomplete="off" id="keyword">
 				</div>
 
 				<?php
 				//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
-				$sql = mysqli_query($koneksi, "SELECT * FROM berkas") or die(mysqli_error($koneksi));
+				$sql = mysqli_query($koneksi, "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%'");
 
 
 				//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...

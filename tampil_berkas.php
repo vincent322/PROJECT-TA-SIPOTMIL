@@ -9,7 +9,7 @@ include('config.php');
 		<font size="6">Data Perkara</font>
 	</center>
 	<hr>
-	<div id="container">
+	<div id="search">
 		<div class="table-responsive">
 			<table class="table table-striped jambo_table bulk_action">
 				<thead>
@@ -27,8 +27,7 @@ include('config.php');
 					<form action="" method="post">
 						<div class="item form-group">
 							<div class="col-md-6 col-sm-6 ">
-								<input type="text" name="keyword" class="form-control" size="4" autofocus placeholder="keyword" autocomplete="off" id="keyword">
-								<button type="submit" name="cari" id="tombol-cari">Cari</button>
+								<input type="text" name="keyword" class="form-control" size="4" autofocus placeholder="Cari Data" autocomplete="off" id="keyword">
 							</div>
 
 							<?php
