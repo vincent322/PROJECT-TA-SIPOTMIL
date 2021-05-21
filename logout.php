@@ -1,10 +1,8 @@
 <?php
-    session_start();
-    $_SESSION =[];
-    session_unset();
-    session_destroy();
+session_start();
+$_SESSION = [];
+session_unset();
+session_destroy();
 
-    header("Location: login.php");
-    exit;
-
-?>
+echo "<script>alert('Logout berhasil'); window.location=('login.php');</script>";
+exit;

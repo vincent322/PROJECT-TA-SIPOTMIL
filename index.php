@@ -63,7 +63,7 @@ if (!isset($_SESSION["login"])) {
                 </li>
                 <li><a href="#"><i class="glyphicon glyphicon-book"></i> About <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="#">About OTMIL Semarang</a></li>
+                    <li><a href="index.php?page=profile">Profile User</a></li>
                     <li><a href="#">Struktur Organisasi</a></li>
                   </ul>
                 </li>
@@ -118,6 +118,10 @@ if (!isset($_SESSION["login"])) {
               # code...
               include 'logout.php';
               break;
+              case 'profile':
+                # code...
+                include 'profile.php';
+                break;
           default:
             #code...
             include 'home.php';

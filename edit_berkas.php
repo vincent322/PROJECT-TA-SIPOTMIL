@@ -44,9 +44,14 @@ if (!isset($_SESSION["login"])) {
 		$tanggal			= $_POST['tanggal'];
 		$kesatuan			= $_POST['kesatuan'];
 		$status				= $_POST['status_berkas'];
+		$nama_file = $_FILES['files']['name'];
+		$tmp_name = $_FILES['files']['tmp_name'];
+
+		# move uploaded file to server filepath.
+		move_uploaded_file($tmp_name, 'uploads/' . $nama_file);
 
 		$sql = mysqli_query($koneksi, "UPDATE berkas SET nama_tersangka='$nama', tanggal='$tanggal', kesatuan='$kesatuan', 
-			status_berkas='$status' WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
+			status_berkas='$status', files='$nama_file' WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
 
 		if ($sql) {
 			echo '<script>alert("Berhasil menyimpan data."); document.location="index.php?page=tampil_berkas";</script>';
@@ -56,12 +61,11 @@ if (!isset($_SESSION["login"])) {
 	}
 	?>
 
-	<form action="index.php?page=edit_berkas&kode_registrasi=<?php echo $kode; ?>" method="post">
+	<form action="index.php?page=edit_berkas&kode_registrasi=<?php echo $kode; ?>" method="post" enctype="multipart/form-data">
 		<div class="item form-group">
 			<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Registrasi</label>
 			<div class="col-md-6 col-sm-6">
-				<input type="text" name="kode_registrasi" class="form-control" size="4" value="<?php echo $data['kode_registrasi'];
-																								?>" readonly required>
+				<input type="text" name="kode_registrasi" class="form-control" size="4" value="<?php echo $data['kode_registrasi']; ?>" readonly required>
 			</div>
 		</div>
 		<div class="item form-group">
@@ -86,6 +90,12 @@ if (!isset($_SESSION["login"])) {
 			<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
 			<div class="col-md-6 col-sm-6">
 				<input type="text" name="status_berkas" class="form-control" value="<?php echo $data['status_berkas']; ?>" required>
+			</div>
+		</div>
+		<div class="item form-group">
+			<label class="col-form-label col-md-3 col-sm-3 label-align">File</label>
+			<div class="col-md-6 col-sm-6">
+				<input type="file" name="files" class="form-control" value="<?php echo $data['files']; ?>" required>
 			</div>
 		</div>
 		<div class="item form-group">
