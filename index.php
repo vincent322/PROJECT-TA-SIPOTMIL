@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["login"])) {
+  header("location: login.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,6 +114,10 @@
             # code...
             include 'edit_berkas.php';
             break;
+            case 'logout':
+              # code...
+              include 'logout.php';
+              break;
           default:
             #code...
             include 'home.php';
@@ -118,7 +130,7 @@
       <!-- footer content -->
       <footer>
         <div class="pull-right">
-          Copyright @ 2021 SIOTMIL
+          Copyright @ 2021 SIPOTMIL
         </div>
         <div class="clearfix"></div>
       </footer>

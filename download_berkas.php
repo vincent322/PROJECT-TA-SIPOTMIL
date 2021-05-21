@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION["login"]) ) {
+  header("location: login.php");
+  exit;
+}
+?>
+<?php
     include('config.php');
 
     if (isset($_GET['kode_registrasi'])) {

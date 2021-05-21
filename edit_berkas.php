@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["login"])) {
+	header("location: login.php");
+	exit;
+}
+?>
+
 <?php include('config.php'); ?>
 
 
@@ -75,11 +83,11 @@
 			</div>
 		</div>
 		<div class="item form-group">
-				<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
-				<div class="col-md-6 col-sm-6">
-					<input type="text" name="status_berkas" class="form-control" value="<?php echo $data['status_berkas']; ?>" required>
-				</div>
+			<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
+			<div class="col-md-6 col-sm-6">
+				<input type="text" name="status_berkas" class="form-control" value="<?php echo $data['status_berkas']; ?>" required>
 			</div>
+		</div>
 		<div class="item form-group">
 			<div class="col-md-6 col-sm-6 offset-md-3">
 				<input type="submit" name="submit" class="btn btn-primary" value="Simpan">

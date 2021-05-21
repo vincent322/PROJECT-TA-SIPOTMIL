@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+	header("location: login.php");
+	exit;
+}
+?>
+
+<?php
 include('../config.php');
 $keyword = $_GET['keyword'];
 $query = "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%'";
