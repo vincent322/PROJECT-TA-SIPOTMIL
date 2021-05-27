@@ -40,15 +40,16 @@ include('config.php');
 
 							<?php
 
+							//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
+							$sql = mysqli_query($koneksi, "SELECT * FROM berkas") or die(mysqli_error($koneksi));
+
+
 							//PAGINATION
 							/*
 							$jumlahDataPerHalaman = 5;
 							$result = mysqli_query($koneksi, "SELECT * FROM berkas");
 							mysqli_num_rows($result);
 							*/
-
-							//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
-							$sql = mysqli_query($koneksi, "SELECT * FROM berkas") or die(mysqli_error($koneksi));
 
 							if (isset($_POST['cari'])) {
 								$keyword = $_POST['keyword'];

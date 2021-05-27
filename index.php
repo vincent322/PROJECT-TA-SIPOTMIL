@@ -61,11 +61,7 @@ if (!isset($_SESSION["login"])) {
                 </li>
                 <li><a href="index.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="#"><i class="glyphicon glyphicon-book"></i> About <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="index.php?page=profile">Profile User</a></li>
-                    <li><a href="#">Struktur Organisasi</a></li>
-                  </ul>
+                <li><a href="index.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                 </li>
@@ -114,14 +110,14 @@ if (!isset($_SESSION["login"])) {
             # code...
             include 'edit_berkas.php';
             break;
-            case 'logout':
-              # code...
-              include 'logout.php';
-              break;
-              case 'profile':
-                # code...
-                include 'profile.php';
-                break;
+          case 'logout':
+            # code...
+            include 'logout.php';
+            break;
+          case 'profile':
+            # code...
+            include 'profile.php';
+            break;
           default:
             #code...
             include 'home.php';

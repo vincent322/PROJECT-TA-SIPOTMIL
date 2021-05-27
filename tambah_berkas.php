@@ -22,12 +22,23 @@ if (isset($_POST['submit'])) {
 	$nama_file = $_FILES['files']['name'];
 	$tmp_name = $_FILES['files']['tmp_name'];
 
-	# move uploaded file to server filepath.
+	// cek yang diupload files
+	$ekstensiFilesValid = ['zip','rar'];
+	$ekstensiFiles = explode('.', $nama_file);
+	$ekstensiFiles = strtolower(end($ekstensiFiles));
+	if (!in_array($ekstensiFiles, $ekstensiFilesValid)) {
+		echo '<script>alert(" File harus zip"); document.location="index.php?page=tambah_berkas";</script>';
+		return false;
+	}
+
+
+	// move uploaded file to server filepath.
 	move_uploaded_file($tmp_name, 'uploads/' . $nama_file);
 
-
+	// cek apakah kode registrasi sudah terdaftar
 	$cek = mysqli_query($koneksi, "SELECT * FROM berkas WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
 
+	// jika kode registrasi belum terdaftar
 	if (mysqli_num_rows($cek) == 0) {
 		$sql = mysqli_query($koneksi, "INSERT INTO berkas(kode_registrasi, nama_tersangka, tanggal, kesatuan, status_berkas, files) 
 		VALUES('$kode', '$nama', '$tanggal', '$kesatuan', '$status', '$nama_file')") or die(mysqli_error($koneksi));
@@ -38,7 +49,7 @@ if (isset($_POST['submit'])) {
 			echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
 		}
 	} else {
-		echo '<div class="alert alert-warning">Gagal, Kode Berkas sudah terdaftar.</div>';
+		echo '<div class="alert alert-warning">Gagal, Kode Registrasi sudah terdaftar.</div>';
 	}
 }
 ?>
@@ -47,37 +58,37 @@ if (isset($_POST['submit'])) {
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Registrasi</label>
 		<div class="col-md-6 col-sm-6 ">
-			<input type="text" name="kode_registrasi" class="form-control" size="4" required>
+			<input type="text" name="kode_registrasi" class="form-control" size="4" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Tersangka</label>
 		<div class="col-md-6 col-sm-6">
-			<input type="text" name="nama_tersangka" class="form-control" required>
+			<input type="text" name="nama_tersangka" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal</label>
 		<div class="col-md-6 col-sm-6">
-			<input type="date" name="tanggal" class="form-control" required>
+			<input type="date" name="tanggal" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Kesatuan</label>
 		<div class="col-md-6 col-sm-6">
-			<input type="text" name="kesatuan" class="form-control" required>
+			<input type="text" name="kesatuan" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
 		<div class="col-md-6 col-sm-6">
-			<input type="text" name="status_berkas" class="form-control" required>
+			<input type="text" name="status_berkas" class="form-control" required autocomplete="off">  
 		</div>
 	</div>
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">File</label>
 		<div class="col-md-6 col-sm-6">
-			<input type="file" name="files" class="form-control" required>
+			<input type="file" name="files" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">
