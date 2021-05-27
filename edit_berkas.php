@@ -47,6 +47,16 @@ if (!isset($_SESSION["login"])) {
 		$nama_file = $_FILES['files']['name'];
 		$tmp_name = $_FILES['files']['tmp_name'];
 
+		// cek yang diupload files
+		$ekstensiFilesValid = ['zip', 'rar'];
+		$ekstensiFiles = explode('.', $nama_file);
+		$ekstensiFiles = strtolower(end($ekstensiFiles));
+		if (!in_array($ekstensiFiles, $ekstensiFilesValid)) {
+			echo '<script>alert(" File harus zip"); document.location="index.php?page=tambah_berkas";</script>';
+			return false;
+		}
+
+
 		# move uploaded file to server filepath.
 		move_uploaded_file($tmp_name, 'uploads/' . $nama_file);
 
