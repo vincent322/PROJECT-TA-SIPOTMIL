@@ -4,28 +4,23 @@ if (!isset($_SESSION["login"])) {
     header("location: login.php");
     exit;
 }
-$username = $_SESSION['username'];
 ?>
-
-<?php include('config.php'); ?>
-
 
 <div class="container" style="margin-top:20px">
     <center>
-        <font size="6">User Profile</font>
+        <font size="6">Edit Profile</font>
     </center>
 
     <hr>
 
     <?php
     include('config.php');
-    $query = "select * from akses where username='$username'";
-    $result = mysqli_query($koneksi, $query);
-    while ($row = mysqli_fetch_array($result)) :
+    $username = $_GET['username'];
+    $data = mysqli_query($koneksi, "select * from akses where username='$username'");
+    while ($row = mysqli_fetch_array($data)) {
     ?>
 
-        <form>
-            <a href="index.php?page=edit_profile&username=<?php echo $row['username']; ?>"> <i class="btn btn-primary">Edit Berkas</i> </a>
+        <form method="POST" action="updateprofile.php" enctype="multipart/form-data">
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
                 <div class="col-md-6 col-sm-6">
@@ -35,35 +30,40 @@ $username = $_SESSION['username'];
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
                 <div class="col-md-6 col-sm-6">
-                    <input type="text" name="password" class="form-control" value="<?php echo $row['password']; ?>" readonly required>
+                    <input type="password" name="password" class="form-control" value="<?php echo $row['password']; ?>" required>
                 </div>
             </div>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Nama Lengkap</label>
                 <div class="col-md-6 col-sm-6">
-                    <input type="text" name="nama_lengkap" class="form-control" value="<?php echo $row['nama_lengkap']; ?>" readonly required>
+                    <input type="text" name="nama_lengkap" class="form-control" value="<?php echo $row['nama_lengkap']; ?>" required>
                 </div>
             </div>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Jabatan</label>
                 <div class="col-md-6 col-sm-6">
-                    <input type="text" name="jabatan" class="form-control" value="<?php echo $row['jabatan']; ?>" readonly required>
+                    <input type="text" name="jabatan" class="form-control" value="<?php echo $row['jabatan']; ?>" required>
                 </div>
             </div>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal Lahir</label>
                 <div class="col-md-6 col-sm-6">
-                    <input type="date" name="tanggal_lahir" class="form-control" value="<?php echo $row['tanggal_lahir']; ?>" readonly required>
+                    <input type="date" name="tanggal_lahir" class="form-control" value="<?php echo $row['tanggal_lahir']; ?>" required>
                 </div>
             </div>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Pangkat</label>
                 <div class="col-md-6 col-sm-6">
-                    <input type="text" name="Pangkat" class="form-control" value="<?php echo $row['Pangkat']; ?>" readonly required>
+                    <input type="text" name="Pangkat" class="form-control" value="<?php echo $row['Pangkat']; ?>" required>
+                </div>
+            </div>
+            <div class="item form-group">
+                <div class="col-md-6 col-sm-6 offset-md-3">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
                 </div>
             </div>
         </form>
     <?php
-    endwhile;
+    }
     ?>
 </div>

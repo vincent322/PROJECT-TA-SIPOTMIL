@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 	$tmp_name = $_FILES['files']['tmp_name'];
 
 	// cek yang diupload files
-	$ekstensiFilesValid = ['zip','rar'];
+	$ekstensiFilesValid = ['zip', 'rar'];
 	$ekstensiFiles = explode('.', $nama_file);
 	$ekstensiFiles = strtolower(end($ekstensiFiles));
 	if (!in_array($ekstensiFiles, $ekstensiFilesValid)) {
@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
 		<div class="col-md-6 col-sm-6">
-			<input type="text" name="status_berkas" class="form-control" required autocomplete="off">  
+			<input type="text" name="status_berkas" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">
@@ -95,5 +95,6 @@ if (isset($_POST['submit'])) {
 		<div class="col-md-6 col-sm-6 offset-md-3">
 			<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
 		</div>
+	</div>
 </form>
 </div>

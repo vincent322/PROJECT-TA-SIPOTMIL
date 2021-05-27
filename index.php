@@ -118,6 +118,14 @@ if (!isset($_SESSION["login"])) {
             # code...
             include 'profile.php';
             break;
+          case 'edit_profile':
+            # code...
+            include 'edit_profile.php';
+            break;
+          case 'edit_profile_save':
+            # code...
+            include 'updateprofile.php';
+            break;
           default:
             #code...
             include 'home.php';
