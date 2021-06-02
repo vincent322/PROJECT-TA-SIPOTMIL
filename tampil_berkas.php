@@ -41,7 +41,7 @@ include('config.php');
 							<?php
 
 							//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
-							$data = mysqli_query($koneksi, "SELECT * FROM berkas") or die(mysqli_error($koneksi));
+							$sql = mysqli_query($koneksi, "SELECT * FROM berkas") or die(mysqli_error($koneksi));
 
 
 							//PAGINATION

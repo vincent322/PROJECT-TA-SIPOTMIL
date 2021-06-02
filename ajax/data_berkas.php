@@ -9,10 +9,8 @@ if (!isset($_SESSION["login"])) {
 <?php
 include('../config.php');
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%'";
-$result = mysqli_query($koneksi, $query);
 ?>
-
+<a href="index.php?page=tampil_berkas" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Kembali ke daftar berkas</a>
 <table class="table table-striped jambo_table bulk_action">
 	<thead>
 		<tr>
@@ -35,7 +33,6 @@ $result = mysqli_query($koneksi, $query);
 				<?php
 				//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
 				$sql = mysqli_query($koneksi, "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%'");
-
 
 				//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
 				if (mysqli_num_rows($sql) > 0) {
