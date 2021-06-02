@@ -23,12 +23,6 @@ if (!isset($_SESSION["login"])) {
   <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- NProgress -->
-  <link href="assets/nprogress/nprogress.css" rel="stylesheet">
-  <!-- iCheck -->
-  <link href="assets/iCheck/skins/flat/green.css" rel="stylesheet">
-  <!-- bootstrap-progressbar -->
-  <link href="assets/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
   <!-- Custom Theme Style -->
   <link href="assets/css/custom.min.css" rel="stylesheet">
 </head>
@@ -150,16 +144,6 @@ if (!isset($_SESSION["login"])) {
   <script src="assets/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- FastClick -->
-  <script src="assets/fastclick/lib/fastclick.js"></script>
-  <!-- NProgress -->
-  <script src="assets/nprogress/nprogress.js"></script>
-  <!-- bootstrap-progressbar -->
-  <script src="assets/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-  <!-- iCheck -->
-  <script src="assets/iCheck/icheck.min.js"></script>
-  <!-- Skycons -->
-  <script src="assets/skycons/skycons.js"></script>
   <!-- Custom Theme Scripts -->
   <script src="assets/js/custom.min.js"></script>
 

@@ -1,6 +1,5 @@
 // mengambil elemen
 var keyword = document.getElementById('keyword');
-var tombolCari = document.getElementById('tombol-cari');
 var search = document.getElementById('search');
 
 // menambahkan event ketika keyword ditulis

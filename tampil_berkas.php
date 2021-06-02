@@ -35,7 +35,7 @@ include('config.php');
 					<form action="" method="post">
 						<div class="item form-group">
 							<div class="col-md-6 col-sm-6 ">
-								<input type="text" name="keyword" class="form-control" size="4" autofocus placeholder="Cari Data" autocomplete="off" id="keyword">
+								<input type="text" class="form-control" size="4" autofocus placeholder="Cari Data" autocomplete="off" id="keyword">
 							</div>
 
 							<?php
@@ -43,26 +43,6 @@ include('config.php');
 							//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
 							$sql = mysqli_query($koneksi, "SELECT * FROM berkas") or die(mysqli_error($koneksi));
 
-
-							//PAGINATION
-
-							$batas = 3;
-							$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
-							$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-
-							$previous = $halaman - 1;
-							$next = $halaman + 1;
-
-							$sql = mysqli_query($koneksi, "select * from berkas limit $halaman_awal, $batas");
-							$jumlah_data = mysqli_num_rows($data);
-							$total_halaman = ceil($jumlah_data / $batas);
-
-
-							if (isset($_POST['cari'])) {
-								$keyword = $_POST['keyword'];
-								$query = "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%'";
-								$result = mysqli_query($koneksi, $query);
-							}
 
 							//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
 							if (mysqli_num_rows($sql) > 0) {
@@ -100,30 +80,8 @@ include('config.php');
 					';
 							}
 							?>
-							<script src="/assets/js/script.js"></script>
-
-				</tbody>
-				<nav>
-					<ul class="pagination justify-content-center">
-						<li class="page-item">
-							<a class="page-link" <?php if ($halaman > 1) {
-														echo "href='?page=tampil_berkas&halaman=$Previous'";
-													} ?>>Previous</a>
-						</li>
-						<?php
-						for ($x = 1; $x <= $total_halaman; $x++) {
-						?>
-							<li class="page-item"><a class="page-link" href="?page=tampil_berkas&halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
-						<?php
-						}
-						?>
-						<li class="page-item">
-							<a class="page-link" <?php if ($halaman < $total_halaman) {
-														echo "href='?page=tampil_berkas&halaman=$next'";
-													} ?>>Next</a>
-						</li>
-					</ul>
-				</nav>
+							<script src="assets/js/script.js"></script>
+				<tbody>
 			</table>
 		</div>
 	</div>
