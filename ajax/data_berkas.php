@@ -10,7 +10,6 @@ if (!isset($_SESSION["login"])) {
 include('../config.php');
 $keyword = $_GET['keyword'];
 ?>
-<a href="index.php?page=tampil_berkas" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Kembali ke daftar berkas</a>
 <table class="table table-striped jambo_table bulk_action">
 	<thead>
 		<tr>
@@ -26,13 +25,22 @@ $keyword = $_GET['keyword'];
 	<tbody>
 		<form action="" method="post">
 			<div class="item form-group">
-				<div class="col-md-6 col-sm-6 ">
-					<input type="text" name="keyword" class="form-control" size="4" autofocus placeholder="Cari Data" autocomplete="off" id="keyword">
-				</div>
-
 				<?php
+				//paginasi
+				$batas = 3;
+				$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
+				$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+				$posisi = 0;
+				$previous = $halaman - 1;
+				$next = $halaman + 1;
+
+				$data = mysqli_query($koneksi, "SELECT * FROM berkas");
+				$jumlah_data = mysqli_num_rows($data);
+				$total_halaman = ceil($jumlah_data / $batas);
+
 				//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
-				$sql = mysqli_query($koneksi, "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%'");
+				$sql = mysqli_query($koneksi, "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%' LIMIT $halaman_awal, $batas");
 
 				//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
 				if (mysqli_num_rows($sql) > 0) {
@@ -72,3 +80,24 @@ $keyword = $_GET['keyword'];
 				?>
 	<tbody>
 </table>
+<nav>
+	<ul class="pagination justify-content-center">
+		<li class="page-item">
+			<a class="page-link" <?php if ($halaman > 1) {
+										echo "href='?page=tampil_berkas&halaman=$Previous'";
+									} ?>>Previous</a>
+		</li>
+		<?php
+		for ($x = 1; $x <= $total_halaman; $x++) {
+		?>
+			<li class="page-item"><a class="page-link" href="?page=tampil_berkas&halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
+		<?php
+		}
+		?>
+		<li class="page-item">
+			<a class="page-link" <?php if ($halaman < $total_halaman) {
+										echo "href='?page=tampil_berkas&halaman=$next'";
+									} ?>>Next</a>
+		</li>
+	</ul>
+</nav>
