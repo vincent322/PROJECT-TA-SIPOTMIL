@@ -27,7 +27,7 @@ $keyword = $_GET['keyword'];
 			<div class="item form-group">
 				<?php
 				//paginasi
-				$batas = 3;
+				$batas = 5;
 				$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
 				$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
 
@@ -82,10 +82,10 @@ $keyword = $_GET['keyword'];
 </table>
 <nav>
 	<ul class="pagination justify-content-center">
-		<li class="page-item">
-			<a class="page-link" <?php if ($halaman > 1) {
-										echo "href='?page=tampil_berkas&halaman=$Previous'";
-									} ?>>Previous</a>
+			<li class="page-item">
+				<a class="page-link" <?php if ($halaman > 1) {
+											echo "href='?page=tampil_berkas&halaman=$previous'";
+										} ?>>Previous</a>
 		</li>
 		<?php
 		for ($x = 1; $x <= $total_halaman; $x++) {
