@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 	move_uploaded_file($tmp_name, 'uploads/' . $nama_file);
 
 	// cek apakah kode registrasi sudah terdaftar
-	$cek = mysqli_query($koneksi, "SELECT * FROM berkas WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
+	$cek = mysqli_query($koneksi, "SELECT * FROM berkas WHERE kode_registrasi ='$kode'") or die(mysqli_error($koneksi));
 
 	// jika kode registrasi belum terdaftar
 	if (mysqli_num_rows($cek) == 0) {
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 			echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
 		}
 	} else {
-		echo '<div class="alert alert-warning">Gagal, Kode Registrasi sudah terdaftar.</div>';
+		echo '<div class="alert alert-warning">Gagal, Kode Berkas sudah terdaftar.</div>';
 	}
 }
 ?>
