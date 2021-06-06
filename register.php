@@ -45,13 +45,19 @@
         ?>
 
         <form action="" method="POST" class="border border-white rounded p-4 bg-white w-100">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input class="form-control" type="text" placeholder="Input Username" name="username" id="username" autocomplete="off" autofocus required>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" placeholder="Input Username" name="username" id="username" autocomplete="off" autofocus required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" placeholder="Input Password" name="password" id="password" autocomplete="off" required>
+                </div>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input class="form-control" type="password" placeholder="Input Password" name="password" id="password" autocomplete="off" required>
+                <input class="form-control" type="password" placeholder="Konfirmasi Password" name="password2" id="password2" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="nama_lengkap">Nama Lengkap</label>
@@ -72,7 +78,23 @@
             <button type="submit" name="registrasi" class="btn btn-primary">Submit</button>
             <a href="login.php" class="btn btn-info">Back</a>
         </form>
+    </div>
 
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("password").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Password Tidak Sama, Coba Lagi");
+            else
+                document.getElementById("password2").setCustomValidity('');
+        }
+    </script>
     </div>
 </body>
 
