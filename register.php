@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Register</title>
+    <title>Form Registrasi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/faviconlogo.png" type="image/ico" />
@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1>
-            <center>Register Account</center>
+            <center>Form Registrasi</center>
         </h1>
 
         <?php
@@ -75,7 +75,7 @@
                 <label for="pangkat">Pangkat</label>
                 <input class="form-control" type="text" placeholder="Input Pangkat" name="pangkat" id="pangkat" autocomplete="off" required>
             </div>
-            <button type="submit" name="registrasi" class="btn btn-primary">Submit</button>
+            <button type="submit" name="registrasi" class="btn btn-primary">Registrasi</button>
             <a href="login.php" class="btn btn-info">Back</a>
         </form>
     </div>

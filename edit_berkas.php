@@ -52,7 +52,7 @@ if (!isset($_SESSION["login"])) {
 		$ekstensiFiles = explode('.', $nama_file);
 		$ekstensiFiles = strtolower(end($ekstensiFiles));
 		if (!in_array($ekstensiFiles, $ekstensiFilesValid)) {
-			echo '<script>alert(" File harus zip"); document.location="index.php?page=tambah_berkas";</script>';
+			echo '<script>alert(" File harus diisi "); document.location="index.php?page=tampil_berkas";</script>';
 			return false;
 		}
 

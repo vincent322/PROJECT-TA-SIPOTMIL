@@ -25,7 +25,7 @@ $username = $_SESSION['username'];
     ?>
 
         <form>
-            <a href="index.php?page=edit_profile&username=<?php echo $row['username']; ?>"> <i class="btn btn-primary">Edit Berkas</i> </a>
+            <a href="index.php?page=edit_profile&username=<?php echo $row['username']; ?>"> <i class="btn btn-primary">Edit Profile</i> </a>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
                 <div class="col-md-6 col-sm-6">
