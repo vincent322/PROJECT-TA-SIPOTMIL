@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Form Registrasi</title>
+    <title>Form Register Hak Akses</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/faviconlogo.png" type="image/ico" />
@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1>
-            <center>Form Registrasi</center>
+            <center>Form Register Hak Akses</center>
         </h1>
 
         <?php
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password"> Konfirmasi Password</label>
                 <input class="form-control" type="password" placeholder="Konfirmasi Password" name="password2" id="password2" autocomplete="off" required>
             </div>
             <div class="form-group">

@@ -11,10 +11,10 @@ if (!isset($_SESSION["login"])) {
 include('config.php');
 ?>
 
-
+<a href="index.php?page=cetak_berkas" class="btn btn-primary">Cetak Daftar Berkas</a>
 <div class="container" style="margin-top:20px">
 	<center>
-		<font size="6">Data Perkara</font>
+		<font size="6">Data Berkas Perkara</font>
 	</center>
 	<hr>
 	<div class="col-md-6 col-sm-6 ">
@@ -35,7 +35,6 @@ include('config.php');
 					</tr>
 				</thead>
 				<tbody>
-					<form action="" method="post">
 						<div class="item form-group">
 							<?php
 							//paginasi

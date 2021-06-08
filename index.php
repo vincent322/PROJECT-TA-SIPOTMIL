@@ -120,6 +120,10 @@ if (!isset($_SESSION["login"])) {
             # code...
             include 'updateprofile.php';
             break;
+          case 'cetak_berkas':
+            # code...
+            include 'cetak_berkas.php';
+            break;
           default:
             #code...
             include 'home.php';
