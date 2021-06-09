@@ -68,6 +68,5 @@ include('config.php');
                     </script>
             <tbody>
         </table>
-        <a href="index.php?page=tampil_berkas" class="btn btn-info">Kembali</a>
     </div>
 </div>

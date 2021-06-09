@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
-  header("location: login.php");
-  exit;
+if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,6 @@ if (!isset($_SESSION["login"])) {
   <link rel="icon" href="assets/images/faviconlogo.png" type="image/ico" />
 
   <title> Sistem Informasi Perkara OTMIL II-09 Semarang</title>
-
   <!-- Bootstrap -->
   <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -51,15 +50,16 @@ if (!isset($_SESSION["login"])) {
               <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas <span class="fa fa-chevron"></span></a>
+                <li><a href="index.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas <span class="fa fa-chevron"></span></a>
+                <li><a href="index.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                 </li>
-
+                <li> Hello, <?= $_SESSION['nama_lengkap'] ?> </li>
+                <li> Selamat datang, anda berhasil login sebagai <?= $_SESSION['username'] ?> </li>
               </ul>
             </div>
           </div>

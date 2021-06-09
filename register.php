@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Form Register Hak Akses</title>
+    <title>Form Tambah Hak Akses</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/faviconlogo.png" type="image/ico" />
@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1>
-            <center>Form Register Hak Akses</center>
+            <center>Form Tambah Hak Akses</center>
         </h1>
 
         <?php
@@ -25,13 +25,13 @@
             $jabatan             = $_POST['jabatan'];
             $tgllahir            = $_POST['tanggal_lahir'];
             $pangkat            = $_POST['pangkat'];
-
+            $level              = $_POST['level'];
 
             $cek = mysqli_query($koneksi, "SELECT * FROM akses WHERE username='$username'") or die(mysqli_error($koneksi));
 
             if (mysqli_num_rows($cek) == 0) {
-                $sql = mysqli_query($koneksi, "INSERT INTO akses(username, password, nama_lengkap, jabatan, tanggal_lahir, pangkat) 
-		VALUES('$username', '$password', '$nama', '$jabatan', '$tgllahir', '$pangkat')") or die(mysqli_error($koneksi));
+                $sql = mysqli_query($koneksi, "INSERT INTO akses(username, password, nama_lengkap, jabatan, tanggal_lahir, pangkat, level) 
+		VALUES('$username', '$password', '$nama', '$jabatan', '$tgllahir', '$pangkat', '$level')") or die(mysqli_error($koneksi));
 
                 if ($sql) {
                     echo '<script>alert("Registrasi Berhasil."); document.location="login.php";</script>';
@@ -74,6 +74,16 @@
             <div class="form-group">
                 <label for="pangkat">Pangkat</label>
                 <input class="form-control" type="text" placeholder="Input Pangkat" name="pangkat" id="pangkat" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="level">Level</label>
+                <select class="form-control" type="text" placeholder="Input Pangkat" name="level" id="level" autocomplete="off" required>
+                    <option value="Kepala">Kepala</option>
+                    <option value="WakilKepala">Wakil Kepala</option>
+                    <option value="StaffTAUD">Staff TAUD</option>
+                    <option value="StaffPenyidik">Staff Penyidik</option>
+                    <option value="Admin">Administrator</option>
+                </select>
             </div>
             <button type="submit" name="registrasi" class="btn btn-primary">Registrasi</button>
             <a href="login.php" class="btn btn-info">Back</a>

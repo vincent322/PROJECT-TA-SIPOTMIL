@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-    <a href="register.php" class="btn btn-danger">Daftar</a>
+        <a href="register.php" class="btn btn-danger">Daftar</a>
         <form action="login_proses.php" method="POST" class="border border-white rounded p-4 bg-white w-100">
             <h3 class="text-center">Login</h3>
             <div class="form-group">
@@ -23,6 +23,16 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <input class="form-control" type="password" placeholder="Input Password" name="password" id="password" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+            <label for="hak akses">Login Sebagai</label>
+                <select class="form-control" type="password" placeholder="Pilih Hak Akses" name="level" id="level" autocomplete="off" required>
+                    <option value="Kepala">Kepala</option>
+                    <option value="WakilKepala">Wakil Kepala</option>
+                    <option value="StaffTAUD">Staff TAUD</option>
+                    <option value="StaffPenyidik">Staff Penyidik</option>
+                    <option value="Admin">Administrator</option>
+                </select>
             </div>
             <button type="submit" name="login" class="btn btn-primary">Submit</button>
         </form>

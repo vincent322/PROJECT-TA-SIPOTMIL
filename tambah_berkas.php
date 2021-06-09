@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
 <?php include('config.php'); ?>
 
 <center>
-	<font size="6">Tambah Data</font>
+	<font size="6">Tambah Data Berkas Perkara</font>
 </center>
 <hr>
 <?php

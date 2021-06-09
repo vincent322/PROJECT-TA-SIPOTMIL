@@ -1,8 +1,8 @@
-<?php
+<?php 
+// mengaktifkan session php
 session_start();
-$_SESSION = [];
-session_unset();
+ 
+// menghapus semua session
 session_destroy();
-
 echo "<script>alert('Logout berhasil'); window.location=('login.php');</script>";
 exit;
