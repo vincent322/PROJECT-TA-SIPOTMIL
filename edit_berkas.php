@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
-	header("location: login.php");
-	exit;
+if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='login.php'</script>";
 }
+
 ?>
 
 <?php include('config.php'); ?>
@@ -64,14 +64,14 @@ if (!isset($_SESSION["login"])) {
 			status_berkas='$status', files='$nama_file' WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
 
 		if ($sql) {
-			echo '<script>alert("Berhasil menyimpan data."); document.location="index.php?page=tampil_berkas";</script>';
+			echo '<script>alert("Berhasil menyimpan data."); document.location="?page=tampil_berkas";</script>';
 		} else {
 			echo '<div class="alert alert-warning">Gagal melakukan proses edit data.</div>';
 		}
 	}
 	?>
 
-	<form action="index.php?page=edit_berkas&kode_registrasi=<?php echo $kode; ?>" method="post" enctype="multipart/form-data">
+	<form action="" method="post" enctype="multipart/form-data">
 		<div class="item form-group">
 			<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Registrasi</label>
 			<div class="col-md-6 col-sm-6">

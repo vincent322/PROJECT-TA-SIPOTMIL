@@ -70,7 +70,7 @@ include('config.php');
 							<td>' . $data['kesatuan'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
 							<td>
-								<a href="index.php?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .
+								<a href="?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .
 										'" class="btn btn-secondary btn-sm">Edit</a>
 								<a href="delete_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
 										'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
