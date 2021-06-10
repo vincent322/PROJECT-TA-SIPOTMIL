@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
-	header("location: login.php");
-	exit;
+if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
 }
+
 ?>
 <div class="container" style="margin-top:20px">
 	<?php

@@ -13,12 +13,9 @@ include('config.php');
 
 <div class="container" style="margin-top:20px">
 	<center>
-		<font size="6">Data Berkas Perkara</font>
+		<font size="6">Data Perijinan</font>
 	</center>
 	<hr>
-	<div class="col-md-6 col-sm-6 ">
-		<input type="text" class="form-control" size="4" autofocus placeholder="Cari Data" autocomplete="off" id="keyword">
-	</div>
 	<div id="search">
 		<div class="table-responsive">
 			<table class="table table-striped jambo_table bulk_action">

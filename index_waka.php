@@ -48,17 +48,17 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
               <ul class="nav side-menu">
-                <li><a href="index_waka.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
+                <li><a href="index_kepala.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_waka.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_kepala.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_waka.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_kepala.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Perijinan <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_waka.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
+                <li><a href="index_kepala.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_waka.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
+                <li><a href="index_kepala.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                 </li>
-                <li>  Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai WakaOtmil </li>
+                <li> Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai WakaOTMIL </li>
               </ul>
             </div>
           </div>
@@ -115,13 +115,13 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'updateprofile.php';
             break;
-          case 'cetak_berkas':
+          case 'data_ijin':
             # code...
-            include 'cetak_berkas.php';
+            include 'data_ijin.php';
             break;
             case 'cetak_berkas':
               # code...
-              include 'data_ijin.php';
+              include 'cetak_berkas.php';
               break;
           default:
             #code...

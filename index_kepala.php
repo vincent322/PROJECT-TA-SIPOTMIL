@@ -52,7 +52,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_kepala.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_kepala.php?page=tampil_data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Perijinan <span class="fa fa-chevron"></span></a>
+                <li><a href="index_kepala.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Perijinan <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_kepala.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
@@ -117,7 +117,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             break;
           case 'data_ijin':
             # code...
-            include 'tampil_data_ijin.php';
+            include 'data_ijin.php';
             break;
             case 'cetak_berkas':
               # code...
