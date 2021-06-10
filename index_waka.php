@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
-  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
+  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='login.php'</script>";
 }
 
 ?>
@@ -51,6 +51,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 <li><a href="index_waka.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_waka.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                </li>
+                <li><a href="index_waka.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_waka.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
@@ -117,6 +119,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'cetak_berkas.php';
             break;
+            case 'cetak_berkas':
+              # code...
+              include 'data_ijin.php';
+              break;
           default:
             #code...
             include 'home.php';

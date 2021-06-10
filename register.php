@@ -22,7 +22,6 @@
             $username            = $_POST['username'];
             $password            = $_POST['password'];
             $nama                = $_POST['nama_lengkap'];
-            $jabatan             = $_POST['jabatan'];
             $tgllahir            = $_POST['tanggal_lahir'];
             $pangkat            = $_POST['pangkat'];
             $level              = $_POST['level'];
@@ -30,8 +29,8 @@
             $cek = mysqli_query($koneksi, "SELECT * FROM akses WHERE username='$username'") or die(mysqli_error($koneksi));
 
             if (mysqli_num_rows($cek) == 0) {
-                $sql = mysqli_query($koneksi, "INSERT INTO akses(username, password, nama_lengkap, jabatan, tanggal_lahir, pangkat, level) 
-		VALUES('$username', '$password', '$nama', '$jabatan', '$tgllahir', '$pangkat', '$level')") or die(mysqli_error($koneksi));
+                $sql = mysqli_query($koneksi, "INSERT INTO akses(username, password, nama_lengkap, tanggal_lahir, pangkat, level) 
+		VALUES('$username', '$password', '$nama',  '$tgllahir', '$pangkat', '$level')") or die(mysqli_error($koneksi));
 
                 if ($sql) {
                     echo '<script>alert("Registrasi Berhasil."); document.location="login.php";</script>';
@@ -64,10 +63,6 @@
                 <input class="form-control" type="text" placeholder="Input Nama Lengkap" name="nama_lengkap" id="nama_lengkap" autocomplete="off" required>
             </div>
             <div class="form-group">
-                <label for="jabatan">Jabatan</label>
-                <input class="form-control" type="text" placeholder="Input Jabatan" name="jabatan" id="jabatan" autocomplete="off" required>
-            </div>
-            <div class="form-group">
                 <label for="tanggal_lahir">Tanggal Lahir</label>
                 <input class="form-control" type="date" placeholder="" name="tanggal_lahir" id="tanggal_lahir" autocomplete="off" required>
             </div>
@@ -79,9 +74,9 @@
                 <label for="level">Level</label>
                 <select class="form-control" type="text" placeholder="Input Pangkat" name="level" id="level" autocomplete="off" required>
                     <option value="Kepala">Kepala</option>
-                    <option value="WakilKepala">Wakil Kepala</option>
-                    <option value="StaffTAUD">Staff TAUD</option>
-                    <option value="StaffPenyidik">Staff Penyidik</option>
+                    <option value="Waka">Wakil Kepala</option>
+                    <option value="TAUD">Staff TAUD</option>
+                    <option value="Penyidik">Staff Penyidik</option>
                     <option value="Admin">Administrator</option>
                 </select>
             </div>

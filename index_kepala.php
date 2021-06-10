@@ -52,6 +52,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_kepala.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
+                <li><a href="index_kepala.php?page=tampil_data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Perijinan <span class="fa fa-chevron"></span></a>
+                </li>
                 <li><a href="index_kepala.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_kepala.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
@@ -113,10 +115,14 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'updateprofile.php';
             break;
-          case 'cetak_berkas':
+          case 'data_ijin':
             # code...
-            include 'cetak_berkas.php';
+            include 'tampil_data_ijin.php';
             break;
+            case 'cetak_berkas':
+              # code...
+              include 'cetak_berkas.php';
+              break;
           default:
             #code...
             include 'home.php';

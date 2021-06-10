@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
-  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
+if (!isset($_SESSION["login"])) {
+	header("location: login.php");
+	exit;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +53,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 <li><a href="index.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
+                </li>
+                <li><a href="index.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-user"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
@@ -124,6 +126,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'cetak_berkas.php';
             break;
+            case 'pengajuan_ijin':
+              # code...
+              include 'pengajuan_ijin.php';
+              break;
           default:
             #code...
             include 'home.php';

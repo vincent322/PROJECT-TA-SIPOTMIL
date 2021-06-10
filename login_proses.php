@@ -25,11 +25,11 @@ if (isset($_POST["login"])) {
       //uji level user
       if ($level == "Kepala") {
         echo "<script>alert('Selamat Datang, Kepala!'); window.location=('index_kepala.php');</script>";
-      } elseif ($level == "WakilKepala") {
+      } elseif ($level == "Waka") {
         echo "<script>alert('Selamat Datang, Wakil Kepala!'); window.location=('index_waka.php');</script>";
-      } elseif ($level == "StaffPenyidik") {
+      } elseif ($level == "Penyidik") {
         echo "<script>alert('Selamat Datang, Staff Penyidik!'); window.location=('index_staff_penyidik.php');</script>";
-      } elseif ($level == "StaffTAUD") {
+      } elseif ($level == "TAUD") {
         echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_staff_taud.php');</script>";
       } elseif ($level == "Admin") {
         echo "<script>alert('Selamat Datang, Admin!'); window.location=('index.php');</script>";

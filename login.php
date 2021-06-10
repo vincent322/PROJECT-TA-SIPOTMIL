@@ -28,9 +28,9 @@
             <label for="hak akses">Login Sebagai</label>
                 <select class="form-control" type="password" placeholder="Pilih Hak Akses" name="level" id="level" autocomplete="off" required>
                     <option value="Kepala">Kepala</option>
-                    <option value="WakilKepala">Wakil Kepala</option>
-                    <option value="StaffTAUD">Staff TAUD</option>
-                    <option value="StaffPenyidik">Staff Penyidik</option>
+                    <option value="Waka">Wakil Kepala</option>
+                    <option value="TAUD">Staff TAUD</option>
+                    <option value="Penyidik">Staff Penyidik</option>
                     <option value="Admin">Administrator</option>
                 </select>
             </div>
