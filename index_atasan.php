@@ -56,6 +56,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-tasks"></i> History Data Perijinan <span class="fa fa-chevron"></span></a>
                 </li>
+                <li><a href="index_atasan.php?page=data_pengguna"><i class="glyphicon glyphicon-tasks"></i> Data Pengguna Sistem <span class="fa fa-chevron"></span></a>
+                </li>
                 <li><a href="index_atasan.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_atasan.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
@@ -129,6 +131,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
               # code...
               include 'cetak_berkas.php';
               break;
+              case 'data_pengguna':
+                # code...
+                include 'data_pengguna.php';
+                break;
           default:
             #code...
             include 'home.php';

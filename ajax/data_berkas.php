@@ -56,7 +56,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 							<td>' . $no . '</td>
 							<td>' . $data['kode_registrasi'] . '</td>
 							<td>' . $data['nama_tersangka'] . '</td>
-							<td>' . $data['tanggal'] . '</td>
+							<td>' . date('d M Y', strtotime($data['tanggal'])) . '</td>
 							<td>' . $data['kesatuan'] . '</td>
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
