@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
 	$nama			= $_POST['nama_tersangka'];
 	$tanggal		= $_POST['tanggal'];
 	$kesatuan		= $_POST['kesatuan'];
+	$jenis_pidana 	= $_POST['jenis_pidana'];
 	$status			= $_POST['status_berkas'];
 	$nama_file = $_FILES['files']['name'];
 	$tmp_name = $_FILES['files']['tmp_name'];
@@ -40,8 +41,8 @@ if (isset($_POST['submit'])) {
 
 	// jika kode registrasi belum terdaftar
 	if (mysqli_num_rows($cek) == 0) {
-		$sql = mysqli_query($koneksi, "INSERT INTO berkas(kode_registrasi, nama_tersangka, tanggal, kesatuan, status_berkas, files) 
-		VALUES('$kode', '$nama', '$tanggal', '$kesatuan', '$status', '$nama_file')") or die(mysqli_error($koneksi));
+		$sql = mysqli_query($koneksi, "INSERT INTO berkas(kode_registrasi, nama_tersangka, tanggal, kesatuan, jenis_pidana. status_berkas, files) 
+		VALUES('$kode', '$nama', '$tanggal', '$kesatuan', '$jenis_pidana', '$status', '$nama_file')") or die(mysqli_error($koneksi));
 
 		if ($sql) {
 			echo '<script>alert("Berhasil menambahkan data baru."); document.location="index.php?page=tampil_berkas";</script>';
@@ -77,6 +78,12 @@ if (isset($_POST['submit'])) {
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Kesatuan</label>
 		<div class="col-md-6 col-sm-6">
 			<input type="text" name="kesatuan" class="form-control" required autocomplete="off">
+		</div>
+	</div>
+	<div class="item form-group">
+		<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Pidana</label>
+		<div class="col-md-6 col-sm-6">
+			<input type="text" name="jenis_pidana" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">

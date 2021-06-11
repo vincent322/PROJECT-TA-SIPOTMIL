@@ -53,8 +53,8 @@ if (isset($_POST['submit'])) {
             <select class="form-control" type="text" placeholder="Jenis Cuti" name="jenis_ijin" autocomplete="off" required>
                 <option value="Sakit">Sakit</option>
                 <option value="Pendidikan">Pendidikan</option>
-                <option value="Urusan_Keluarga">Urusan Keluarga</option>
-                <option value="Dinas_Luar">Dinas Luar</option>
+                <option value="Keluarga">Urusan Keluarga</option>
+                <option value="Dinas">Dinas Luar</option>
                 <option value="Lainnya">Lainnya</option>
             </select>
         </div>

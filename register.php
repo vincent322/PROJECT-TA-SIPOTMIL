@@ -73,8 +73,7 @@
             <div class="form-group">
                 <label for="level">Level</label>
                 <select class="form-control" type="text" placeholder="Input Pangkat" name="level" id="level" autocomplete="off" required>
-                    <option value="Kepala">Kepala</option>
-                    <option value="Waka">Wakil Kepala</option>
+                    <option value="Atasan">Kepala</option>
                     <option value="TAUD">Staff TAUD</option>
                     <option value="Penyidik">Staff Penyidik</option>
                     <option value="Admin">Administrator</option>

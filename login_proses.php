@@ -23,10 +23,8 @@ if (isset($_POST["login"])) {
       $_SESSION['nama_lengkap'] = $user_valid['nama_lengkap'];
       $_SESSION['level'] = $user_valid['level'];
       //uji level user
-      if ($level == "Kepala") {
-        echo "<script>alert('Selamat Datang, Kepala!'); window.location=('index_kepala.php');</script>";
-      } elseif ($level == "Waka") {
-        echo "<script>alert('Selamat Datang, Wakil Kepala!'); window.location=('index_waka.php');</script>";
+      if ($level == "Atasan") {
+        echo "<script>alert('Selamat Datang, Atasan!'); window.location=('index_atasan.php');</script>";
       } elseif ($level == "Penyidik") {
         echo "<script>alert('Selamat Datang, Staff Penyidik!'); window.location=('index_staff_penyidik.php');</script>";
       } elseif ($level == "TAUD") {

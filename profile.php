@@ -3,7 +3,7 @@ session_start();
 if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
   echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='login.php'</script>";
 }
-
+$username = $_SESSION['username'];
 ?>
 
 <?php include('config.php'); ?>
@@ -24,7 +24,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
     ?>
 
         <form>
-            <a href="index.php?page=edit_profile&username=<?php echo $row['username']; ?>"> <i class="btn btn-primary">Edit Profile</i> </a>
+            <a href="?page=edit_profile&username=<?php echo $row['username']; ?>"> <i class="btn btn-primary">Edit Profile</i> </a>
             <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Username</label>
                 <div class="col-md-6 col-sm-6">
@@ -44,12 +44,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </div>
             </div>
             <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align">Jabatan</label>
-                <div class="col-md-6 col-sm-6">
-                    <input type="text" name="jabatan" class="form-control" value="<?php echo $row['jabatan']; ?>" readonly required>
-                </div>
-            </div>
-            <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal Lahir</label>
                 <div class="col-md-6 col-sm-6">
                     <input type="date" name="tanggal_lahir" class="form-control" value="<?php echo $row['tanggal_lahir']; ?>" readonly required>
@@ -59,6 +53,12 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Pangkat</label>
                 <div class="col-md-6 col-sm-6">
                     <input type="text" name="Pangkat" class="form-control" value="<?php echo $row['Pangkat']; ?>" readonly required>
+                </div>
+            </div>
+            <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Level</label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" name="level" class="form-control" value="<?php echo $row['level']; ?>" readonly required>
                 </div>
             </div>
         </form>

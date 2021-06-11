@@ -13,7 +13,7 @@ include('config.php');
 
 <div class="container" style="margin-top:20px">
 	<center>
-		<font size="6">Data ijin Masuk</font>
+		<font size="6">History Data Perijinan</font>
 	</center>
 	<hr>
 	<div id="search">
@@ -28,7 +28,6 @@ include('config.php');
 						<th>Jenis Ijin</th>
 						<th>Keterangan</th> 
 						<th>Status</th> 
-						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -49,7 +48,7 @@ include('config.php');
 
 							//query ke database SELECT tabel berkas dengan minimal data per halaman 5
 							$sql = mysqli_query($koneksi, "SELECT ijin.*, akses.nama_lengkap FROM ijin JOIN akses 
-                            ON ijin.username = akses.username WHERE ijin.status ='Pending'") or die(mysqli_error($koneksi));
+                            ON ijin.username = akses.username WHERE status != 'Pending'") or die(mysqli_error($koneksi));
 
 
 							//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
@@ -68,11 +67,6 @@ include('config.php');
 							<td>' . $data['jenis_ijin'] . '</td>
 							<td>' . $data['keterangan'] . '</td>
 							<td>' . $data['status'] . '</td>
-                            
-							<td>
-							<a href="ijin_terima.php?kode_ijin=' . $data['kode_ijin'] .'" class="btn btn-primary">Terima</a>
-							<a href="ijin_tolak.php?kode_ijin=' . $data['kode_ijin'] .'" class="btn btn-danger">Tolak</a>
-							</td>
 						</tr>
 						';
 									$no++;

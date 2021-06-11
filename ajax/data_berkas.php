@@ -19,6 +19,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 					<th>Nama Tersangka</th>
 					<th>Tanggal Masuk</th>
 					<th>Kesatuan</th>
+					<th>Jenis Pidana</th>
 					<th>Status Berkas</th>
 					<th>Aksi</th>
 				</tr>
@@ -57,6 +58,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 							<td>' . $data['nama_tersangka'] . '</td>
 							<td>' . $data['tanggal'] . '</td>
 							<td>' . $data['kesatuan'] . '</td>
+							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
 							<td>
 								<a href="?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .

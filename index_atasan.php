@@ -48,17 +48,19 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
               <ul class="nav side-menu">
-                <li><a href="index_kepala.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_kepala.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_kepala.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Perijinan <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Ijin Masuk <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_kepala.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-tasks"></i> History Data Perijinan <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_kepala.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
-                <li> Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai WakaOTMIL </li>
+                <li><a href="index_atasan.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
+                </li>
+                <li> Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai atasan OTMIL II/09 Semarang </li>
               </ul>
             </div>
           </div>
@@ -119,6 +121,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'data_ijin.php';
             break;
+            case 'history_ijin':
+              # code...
+              include 'history_ijin.php';
+              break;
             case 'cetak_berkas':
               # code...
               include 'cetak_berkas.php';
