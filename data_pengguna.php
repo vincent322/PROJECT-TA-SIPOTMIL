@@ -54,6 +54,8 @@ include('config.php');
 							<td>' . $data['Pangkat'] . '</td>
 							<td>' . $data['level'] . '</td>
                             <td>
+                            <a href="?page=edit_user&username=' . $data['username'] .
+										'" class="btn btn-primary btn-sm">Edit</a>
                             <a href="delete_user.php?username=' . $data['username'] .
 										'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a> 
                             </td>

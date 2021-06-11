@@ -50,15 +50,13 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
               <ul class="nav side-menu">
                 <li><a href="index_atasan.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_atasan.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=tampil_berkas"><i class="glyphicon glyphicon-book"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_atasan.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Ijin Masuk <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-tasks"></i> History Data Perijinan <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-list"></i> History Data Perijinan <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_atasan.php?page=data_pengguna"><i class="glyphicon glyphicon-tasks"></i> Data Pengguna Sistem <span class="fa fa-chevron"></span></a>
-                </li>
-                <li><a href="index_atasan.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=data_pengguna"><i class="glyphicon glyphicon-list-alt"></i> Data Pengguna Sistem <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_atasan.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                 </li>
@@ -107,14 +105,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'logout.php';
             break;
-          case 'profile':
-            # code...
-            include 'profile.php';
-            break;
-          case 'edit_profile':
-            # code...
-            include 'edit_profile.php';
-            break;
           case 'edit_profile_save':
             # code...
             include 'updateprofile.php';
@@ -123,18 +113,22 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'data_ijin.php';
             break;
-            case 'history_ijin':
-              # code...
-              include 'history_ijin.php';
-              break;
-            case 'cetak_berkas':
-              # code...
-              include 'cetak_berkas.php';
-              break;
-              case 'data_pengguna':
-                # code...
-                include 'data_pengguna.php';
-                break;
+          case 'history_ijin':
+            # code...
+            include 'history_ijin.php';
+            break;
+          case 'cetak_berkas':
+            # code...
+            include 'cetak_berkas.php';
+            break;
+          case 'data_pengguna':
+            # code...
+            include 'data_pengguna.php';
+            break;
+          case 'edit_user':
+            # code...
+            include 'edit_user.php';
+            break;
           default:
             #code...
             include 'home.php';

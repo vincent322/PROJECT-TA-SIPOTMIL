@@ -70,8 +70,8 @@ include('config.php');
 							<td>' . $data['status'] . '</td>
                             
 							<td>
-							<a href="ijin_terima.php?kode_ijin=' . $data['kode_ijin'] .'" class="btn btn-primary">Terima</a>
-							<a href="ijin_tolak.php?kode_ijin=' . $data['kode_ijin'] .'" class="btn btn-danger">Tolak</a>
+							<a href="ijin_terima.php?kode_ijin=' . $data['kode_ijin'] .'" class="btn btn-primary btn-sm">Terima</a>
+							<a href="ijin_tolak.php?kode_ijin=' . $data['kode_ijin'] .'" class="btn btn-danger btn-sm">Tolak</a>
 							</td>
 						</tr>
 						';
