@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
-  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='login.php'</script>";
+	echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='login.php'</script>";
 }
 
 ?>
@@ -43,16 +43,23 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 		$nama				 = $_POST['nama_tersangka'];
 		$tanggal			= $_POST['tanggal'];
 		$kesatuan			= $_POST['kesatuan'];
+		$jenis_pidana = $_POST['jenis_pidana'];
 		$status				= $_POST['status_berkas'];
-		$nama_file = $_FILES['files']['name'];
-		$tmp_name = $_FILES['files']['tmp_name'];
+		$file_lama = $_POST['file_lama'];
+
+		if (!file_exists($_FILES['files']['tmp_name']) || !is_uploaded_file($_FILES['files']['tmp_name'])) {
+			$nama_file = $file_lama;
+		} else {
+			$nama_file = $_FILES['files']['name'];
+			$tmp_name = $_FILES['files']['tmp_name'];
+		}
 
 		// cek yang diupload files
 		$ekstensiFilesValid = ['zip', 'rar'];
 		$ekstensiFiles = explode('.', $nama_file);
 		$ekstensiFiles = strtolower(end($ekstensiFiles));
 		if (!in_array($ekstensiFiles, $ekstensiFilesValid)) {
-			echo '<script>alert(" File harus diisi "); document.location="index.php?page=tampil_berkas";</script>';
+			echo '<script>alert(" File harus diisi "); document.location="?page=tampil_berkas";</script>';
 			return false;
 		}
 
@@ -60,7 +67,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 		# move uploaded file to server filepath.
 		move_uploaded_file($tmp_name, 'uploads/' . $nama_file);
 
-		$sql = mysqli_query($koneksi, "UPDATE berkas SET nama_tersangka='$nama', tanggal='$tanggal', kesatuan='$kesatuan', 
+		$sql = mysqli_query($koneksi, "UPDATE berkas SET nama_tersangka='$nama', tanggal='$tanggal', kesatuan='$kesatuan', jenis_pidana='$jenis_pidana', 
 			status_berkas='$status', files='$nama_file' WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
 
 		if ($sql) {
@@ -97,6 +104,12 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 			</div>
 		</div>
 		<div class="item form-group">
+			<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Pidana</label>
+			<div class="col-md-6 col-sm-6">
+				<input type="text" name="jenis_pidana" class="form-control" value="<?php echo $data['jenis_pidana']; ?>" required>
+			</div>
+		</div>
+		<div class="item form-group">
 			<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
 			<div class="col-md-6 col-sm-6">
 				<input type="text" name="status_berkas" class="form-control" value="<?php echo $data['status_berkas']; ?>" required>
@@ -105,7 +118,9 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 		<div class="item form-group">
 			<label class="col-form-label col-md-3 col-sm-3 label-align">File</label>
 			<div class="col-md-6 col-sm-6">
-				<input type="file" name="files" class="form-control" value="<?php echo $data['files']; ?>" required>
+				<input type="file" name="files" class="form-control">
+				<input type="hidden" name="file_lama" class="form-control" value="<?php echo $data['files']; ?>">
+				Berkas sekarang : <?php echo $data['files']; ?>
 			</div>
 		</div>
 		<div class="item form-group">
