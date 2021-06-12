@@ -17,7 +17,7 @@ keyword.addEventListener('keyup', function () {
     }
 
     //eksekusi ajax
-    xhr.open('GET', 'ajax/data_berkas.php?keyword=' + keyword.value, true);
+    xhr.open('GET', 'ajax/data_berkas_atasan.php?keyword=' + keyword.value, true);
     xhr.send();
 
 

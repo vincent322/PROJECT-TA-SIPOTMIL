@@ -50,7 +50,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
               <ul class="nav side-menu">
                 <li><a href="index_atasan.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_atasan.php?page=tampil_berkas"><i class="glyphicon glyphicon-book"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=tampil_berkas_atasan"><i class="glyphicon glyphicon-book"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_atasan.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Ijin Masuk <span class="fa fa-chevron"></span></a>
                 </li>
@@ -85,13 +85,13 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
         parse_str($_SERVER['QUERY_STRING'], $queries);
         error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         switch ($queries['page']) {
-          case 'tampil_berkas':
+          case 'tampil_berkas_atasan':
             # code...
-            include 'tampil_berkas.php';
+            include 'tampil_berkas_atasan.php';
             break;
-          case 'data_berkas':
+          case 'data_berkas_atasan':
             # code...
-            include 'data_berkas.php';
+            include 'data_berkas_atasan.php';
             break;
           case 'edit_berkas':
             # code...

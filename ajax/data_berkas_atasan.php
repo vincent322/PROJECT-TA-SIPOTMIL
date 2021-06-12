@@ -63,7 +63,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 							<td>
 								<a href="?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .
 									'" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="delete_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
+								<a href="delete_berkas_atasan.php?kode_registrasi=' . $data['kode_registrasi'] .
 									'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 								<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
 									'" class="btn btn-primary btn-sm">Download File</a>

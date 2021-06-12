@@ -11,7 +11,7 @@ if (!isset($_SESSION["login"])) {
 include('config.php');
 ?>
 
-<a href="index.php?page=cetak_berkas" class="btn btn-primary btn-sm">Cetak Daftar Berkas</a>
+<a href="?page=cetak_berkas" class="btn btn-primary btn-sm">Cetak Daftar Berkas</a>
 <div class="container" style="margin-top:20px">
 	<center>
 		<font size="6">Data Berkas Perkara</font>
@@ -74,7 +74,7 @@ include('config.php');
 							<td>
 								<a href="?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .
 										'" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="delete_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
+								<a href="delete_berkas_atasan.php?kode_registrasi=' . $data['kode_registrasi'] .
 										'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 								<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
 										'" class="btn btn-primary btn-sm">Download File</a>
