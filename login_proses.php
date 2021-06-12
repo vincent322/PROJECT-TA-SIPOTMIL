@@ -28,14 +28,12 @@ if (isset($_POST["login"])) {
       } elseif ($level == "Penyidik") {
         echo "<script>alert('Selamat Datang, Staff Penyidik!'); window.location=('index_penyidik.php');</script>";
       } elseif ($level == "TAUD") {
-        echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_staff_taud.php');</script>";
-      } elseif ($level == "Admin") {
-        echo "<script>alert('Selamat Datang, Admin!'); window.location=('index.php');</script>";
+        echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_taud.php');</script>";
+      } else {
+        echo "<script>alert('Maaf, Login Gagal, Password anda tidak sesuai!');document.location='index.php'</script>";
       }
     } else {
-      echo "<script>alert('Maaf, Login Gagal, Password anda tidak sesuai!');document.location='index.php'</script>";
+      echo "<script>alert('Maaf, Login Gagal, Username anda tidak terdaftar!');document.location='index.php'</script>";
     }
-  } else {
-    echo "<script>alert('Maaf, Login Gagal, Username anda tidak terdaftar!');document.location='index.php'</script>";
   }
 }

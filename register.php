@@ -76,7 +76,6 @@
                     <option value="Atasan">Kepala</option>
                     <option value="TAUD">Staff TAUD</option>
                     <option value="Penyidik">Staff Penyidik</option>
-                    <option value="Admin">Administrator</option>
                 </select>
             </div>
             <button type="submit" name="registrasi" class="btn btn-primary">Registrasi</button>

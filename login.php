@@ -30,7 +30,6 @@
                     <option value="Atasan">Atasan</option>
                     <option value="TAUD">Staff TAUD</option>
                     <option value="Penyidik">Staff Penyidik</option>
-                    <option value="Admin">Administrator</option>
                 </select>
             </div>
             <button type="submit" name="login" class="btn btn-primary">Submit</button>
