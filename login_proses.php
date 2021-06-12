@@ -26,7 +26,7 @@ if (isset($_POST["login"])) {
       if ($level == "Atasan") {
         echo "<script>alert('Selamat Datang, Atasan!'); window.location=('index_atasan.php');</script>";
       } elseif ($level == "Penyidik") {
-        echo "<script>alert('Selamat Datang, Staff Penyidik!'); window.location=('index_staff_penyidik.php');</script>";
+        echo "<script>alert('Selamat Datang, Staff Penyidik!'); window.location=('index_penyidik.php');</script>";
       } elseif ($level == "TAUD") {
         echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_staff_taud.php');</script>";
       } elseif ($level == "Admin") {

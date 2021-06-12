@@ -48,17 +48,17 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
               <ul class="nav side-menu">
-                <li><a href="index_staff_penyidik.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
+                <li><a href="index_penyidik.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_staff_penyidik.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_penyidik.php?page=tampil_berkas_penyidik"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_staff_penyidik.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index_penyidik.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_staff_penyidik.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
+                <li><a href="index_penyidik.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_staff_penyidik.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
+                <li><a href="index_penyidik.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_staff_penyidik.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
+                <li><a href="index_penyidik.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                 </li>
                 <li> Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai staff Penyidik </li>
               </ul>
@@ -85,17 +85,17 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
         parse_str($_SERVER['QUERY_STRING'], $queries);
         error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         switch ($queries['page']) {
-          case 'tampil_berkas':
+          case 'tampil_berkas_penyidik':
             # code...
-            include 'tampil_berkas.php';
+            include 'tampil_berkas_penyidik.php';
             break;
           case 'tambah_berkas':
             # code...
             include 'tambah_berkas.php';
             break;
-          case 'data_berkas':
+          case 'data_berkas_penyidik':
             # code...
-            include 'data_berkas.php';
+            include 'data_berkas_penyidik.php';
             break;
           case 'edit_berkas':
             # code...
