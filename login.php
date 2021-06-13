@@ -30,6 +30,7 @@
                     <option value="Atasan">Atasan</option>
                     <option value="TAUD">Staff TAUD</option>
                     <option value="Lahkara">Staff Lahkara</option>
+                    <option value="Oditur">Staff Oditur</option>
                 </select>
             </div>
             <button type="submit" name="login" class="btn btn-primary">Submit</button>

@@ -29,6 +29,8 @@ if (isset($_POST["login"])) {
         echo "<script>alert('Selamat Datang, Staff Lahkara!'); window.location=('index_lahkara.php');</script>";
       } elseif ($level == "TAUD") {
         echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_taud.php');</script>";
+      } elseif ($level == "Oditur") {
+        echo "<script>alert('Selamat Datang, Staff Oditur!'); window.location=('index_Oditur.php');</script>";
       } else {
         echo "<script>alert('Maaf, Login Gagal, Password anda tidak sesuai!');document.location='index.php'</script>";
       }
