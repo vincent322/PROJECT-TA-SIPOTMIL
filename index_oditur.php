@@ -52,15 +52,13 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_oditur.php?page=tampil_berkas_oditur"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_oditur.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
-                </li>
                 <li><a href="index_oditur.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_oditur.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_oditur.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                 </li>
-                <li> Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai staff Oditur </li>
+                <li> Selamat datang <?= $_SESSION['nama_lengkap'] ?>, anda berhasil login sebagai staff Oditur </li>
               </ul>
             </div>
           </div>
@@ -88,10 +86,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
           case 'tampil_berkas_oditur':
             # code...
             include 'tampil_berkas_oditur.php';
-            break;
-          case 'tambah_berkas':
-            # code...
-            include 'tambah_berkas.php';
             break;
           case 'data_berkas_oditur':
             # code...

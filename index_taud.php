@@ -60,7 +60,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                                 </li>
                                 <li><a href="index_taud.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
                                 </li>
-                                <li> Selamat datang, <?= $_SESSION['nama_lengkap'] ?> anda berhasil login sebagai Staff TAUD </li>
+                                <li> Selamat datang <?= $_SESSION['nama_lengkap'] ?>, anda berhasil login sebagai Staff TAUD </li>
                             </ul>
                         </div>
                     </div>
