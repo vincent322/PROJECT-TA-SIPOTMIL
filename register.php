@@ -75,7 +75,7 @@
                 <select class="form-control" type="text" placeholder="Input Pangkat" name="level" id="level" autocomplete="off" required>
                     <option value="Atasan">Kepala</option>
                     <option value="TAUD">Staff TAUD</option>
-                    <option value="Penyidik">Staff Penyidik</option>
+                    <option value="Lahkara">Staff Lahkara</option>
                 </select>
             </div>
             <button type="submit" name="registrasi" class="btn btn-primary">Registrasi</button>

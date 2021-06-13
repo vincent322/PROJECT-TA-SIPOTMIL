@@ -25,8 +25,8 @@ if (isset($_POST["login"])) {
       //uji level user
       if ($level == "Atasan") {
         echo "<script>alert('Selamat Datang, Atasan!'); window.location=('index_atasan.php');</script>";
-      } elseif ($level == "Penyidik") {
-        echo "<script>alert('Selamat Datang, Staff Penyidik!'); window.location=('index_penyidik.php');</script>";
+      } elseif ($level == "Lahkara") {
+        echo "<script>alert('Selamat Datang, Staff Lahkara!'); window.location=('index_lahkara.php');</script>";
       } elseif ($level == "TAUD") {
         echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_taud.php');</script>";
       } else {

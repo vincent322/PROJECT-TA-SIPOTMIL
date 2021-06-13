@@ -29,7 +29,7 @@
                 <select class="form-control" type="password" placeholder="Pilih Hak Akses" name="level" id="level" autocomplete="off" required>
                     <option value="Atasan">Atasan</option>
                     <option value="TAUD">Staff TAUD</option>
-                    <option value="Penyidik">Staff Penyidik</option>
+                    <option value="Lahkara">Staff Lahkara</option>
                 </select>
             </div>
             <button type="submit" name="login" class="btn btn-primary">Submit</button>

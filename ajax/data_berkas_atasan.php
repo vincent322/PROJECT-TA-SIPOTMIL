@@ -42,7 +42,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 						$total_halaman = ceil($jumlah_data / $batas);
 
 						//query ke database SELECT tabel berkas urut berdasarkan id yang paling besar
-						$sql = mysqli_query($koneksi, "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%' LIMIT $halaman_awal, $batas");
+						$sql = mysqli_query($koneksi, "SELECT * FROM berkas WHERE nama_tersangka like '%$keyword%' 
+						LIMIT $halaman_awal, $batas");
 
 						//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
 						if (mysqli_num_rows($sql) > 0) {

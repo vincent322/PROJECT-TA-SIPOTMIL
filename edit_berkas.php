@@ -126,7 +126,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 		<div class="item form-group">
 			<div class="col-md-6 col-sm-6 offset-md-3">
 				<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-				<a href="index.php?page=tampil_berkas" class="btn btn-warning">Kembali</a>
 			</div>
 		</div>
 	</form>
