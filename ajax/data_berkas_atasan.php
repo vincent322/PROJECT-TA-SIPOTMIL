@@ -21,6 +21,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 					<th>Kesatuan</th>
 					<th>Jenis Pidana</th>
 					<th>Status Berkas</th>
+					<th>Pengolah</th>
+					<th>Catatan</th>	
 					<th>Aksi</th>
 				</tr>
 			</thead>
@@ -61,6 +63,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 							<td>' . $data['kesatuan'] . '</td>
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
+							<td>' . $data['pengolah'] . '</td>
+							<td>' . $data['catatan'] . '</td>
 							<td>
 								<a href="?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .
 									'" class="btn btn-secondary btn-sm">Edit</a>
