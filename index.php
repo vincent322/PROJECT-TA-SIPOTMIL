@@ -52,7 +52,7 @@ if (!isset($_SESSION["login"])) {
                 </li>
                 <li><a href="index.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
+                <li><a href="index.php?page=tambah_berkas_taud"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-user"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                 </li>
@@ -92,7 +92,7 @@ if (!isset($_SESSION["login"])) {
             break;
           case 'tambah_berkas':
             # code...
-            include 'tambah_berkas.php';
+            include 'tambah_berkas_taud.php';
             break;
           case 'data_berkas':
             # code...

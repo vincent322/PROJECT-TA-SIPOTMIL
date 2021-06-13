@@ -19,7 +19,6 @@ if (isset($_POST['submit'])) {
 	$tanggal		= $_POST['tanggal'];
 	$kesatuan		= $_POST['kesatuan'];
 	$jenis_pidana 	= $_POST['jenis_pidana'];
-	$status			= $_POST['status_berkas'];
 	$nama_file = $_FILES['files']['name'];
 	$tmp_name = $_FILES['files']['tmp_name'];
 
@@ -28,7 +27,7 @@ if (isset($_POST['submit'])) {
 	$ekstensiFiles = explode('.', $nama_file);
 	$ekstensiFiles = strtolower(end($ekstensiFiles));
 	if (!in_array($ekstensiFiles, $ekstensiFilesValid)) {
-		echo '<script>alert(" File harus zip"); document.location="index.php?page=tambah_berkas";</script>';
+		echo '<script>alert(" File harus zip"); document.location="index_taud.php?page=tambah_berkas_taud";</script>';
 		return false;
 	}
 
@@ -41,11 +40,10 @@ if (isset($_POST['submit'])) {
 
 	// jika kode registrasi belum terdaftar
 	if (mysqli_num_rows($cek) == 0) {
-		$sql = mysqli_query($koneksi, "INSERT INTO berkas(kode_registrasi, nama_tersangka, tanggal, kesatuan, jenis_pidana. status_berkas, files) 
-		VALUES('$kode', '$nama', '$tanggal', '$kesatuan', '$jenis_pidana', '$status', '$nama_file')") or die(mysqli_error($koneksi));
+		$sql = mysqli_query($koneksi, "INSERT INTO berkas VALUES('$kode', '$nama', '$tanggal', '$kesatuan', '$jenis_pidana', 'Pending', '', '', '$nama_file')") or die(mysqli_error($koneksi));
 
 		if ($sql) {
-			echo '<script>alert("Berhasil menambahkan data baru."); document.location="index.php?page=tampil_berkas";</script>';
+			echo '<script>alert("Berhasil menambahkan data baru."); document.location="index_taud.php?page=tampil_berkas_taud";</script>';
 		} else {
 			echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
 		}
@@ -84,12 +82,6 @@ if (isset($_POST['submit'])) {
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Pidana</label>
 		<div class="col-md-6 col-sm-6">
 			<input type="text" name="jenis_pidana" class="form-control" required autocomplete="off">
-		</div>
-	</div>
-	<div class="item form-group">
-		<label class="col-form-label col-md-3 col-sm-3 label-align">Status Berkas</label>
-		<div class="col-md-6 col-sm-6">
-			<input type="text" name="status_berkas" class="form-control" required autocomplete="off">
 		</div>
 	</div>
 	<div class="item form-group">

@@ -52,7 +52,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                                 </li>
                                 <li><a href="index_taud.php?page=tampil_berkas_taud"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                                 </li>
-                                <li><a href="index_taud.php?page=tambah_berkas"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
+                                <li><a href="index_taud.php?page=tambah_berkas_taud"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
                                 </li>
                                 <li><a href="index_taud.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                                 </li>
@@ -91,7 +91,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                         break;
                     case 'tambah_berkas_taud':
                         # code...
-                        include 'tambah_berkas.php';
+                        include 'tambah_berkas_taud.php';
                         break;
                     case 'data_berkas':
                         # code...

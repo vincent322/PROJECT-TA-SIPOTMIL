@@ -121,6 +121,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'cetak_berkas.php';
             break;
+          case 'cetak_history_ijin':
+            # code...
+            include 'cetak_history_ijin.php';
+            break;
           case 'data_pengguna':
             # code...
             include 'data_pengguna.php';

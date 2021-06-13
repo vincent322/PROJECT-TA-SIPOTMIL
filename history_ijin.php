@@ -11,6 +11,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 include('config.php');
 ?>
 
+<a href="?page=cetak_history_ijin" class="btn btn-primary btn-sm">Cetak Riwayat Ijin</a>
 <div class="container" style="margin-top:20px">
 	<center>
 		<font size="6">History Data Perijinan</font>
@@ -33,19 +34,6 @@ include('config.php');
 				<tbody>
 						<div class="item form-group">
 							<?php
-							//paginasi
-							$batas = 5;
-							$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
-							$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-
-							$posisi = 0;
-							$previous = $halaman - 1;
-							$next = $halaman + 1;
-
-							$data = mysqli_query($koneksi, "SELECT * FROM ijin");
-							$jumlah_data = mysqli_num_rows($data);
-							$total_halaman = ceil($jumlah_data / $batas);
-
 							//query ke database SELECT tabel berkas dengan minimal data per halaman 5
 							$sql = mysqli_query($koneksi, "SELECT ijin.*, akses.nama_lengkap FROM ijin JOIN akses 
                             ON ijin.username = akses.username WHERE status != 'Pending'") or die(mysqli_error($koneksi));
@@ -80,30 +68,8 @@ include('config.php');
 					';
 							}
 							?>
-							<script src="assets/js/script.js"></script>
 				<tbody>
 			</table>
-			<nav>
-				<ul class="pagination justify-content-center">
-					<li class="page-item">
-						<a class="page-link" <?php if ($halaman > 1) {
-													echo "href='?page=tampil_berkas&halaman=$previous'";
-												} ?>>Previous</a>
-					</li>
-					<?php
-					for ($x = 1; $x <= $total_halaman; $x++) {
-					?>
-						<li class="page-item"><a class="page-link" href="?page=tampil_berkas&halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
-					<?php
-					}
-					?>
-					<li class="page-item">
-						<a class="page-link" <?php if ($halaman < $total_halaman) {
-													echo "href='?page=tampil_berkas&halaman=$next'";
-												} ?>>Next</a>
-					</li>
-				</ul>
-			</nav>
 		</div>
 	</div>
 </div>
