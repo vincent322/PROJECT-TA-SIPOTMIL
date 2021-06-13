@@ -61,10 +61,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
 							<td>
-								<a href="?page=edit_berkas&kode_registrasi=' . $data['kode_registrasi'] .
-									'" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="delete_berkas_oditur.php?kode_registrasi=' . $data['kode_registrasi'] .
-									'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 								<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
 									'" class="btn btn-primary btn-sm">Download File</a>
 							</td>

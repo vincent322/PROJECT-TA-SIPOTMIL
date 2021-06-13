@@ -13,7 +13,7 @@ include('config.php');
 
 <div class="container" style="margin-top:20px">
 	<center>
-		<font size="6">Berkas Verifikasi Kepala</font>
+		<font size="6">Berkas Oditur</font>
 	</center>
 	<hr>
 	<div id="search">
@@ -36,7 +36,7 @@ include('config.php');
 						<?php
 
 						//query ke database SELECT tabel berkas dengan minimal data per halaman 5
-						$sql = mysqli_query($koneksi, "SELECT * FROM berkas where status_berkas ='Diproses Kepala'") or die(mysqli_error($koneksi));
+						$sql = mysqli_query($koneksi, "SELECT * FROM berkas where status_berkas ='Diproses Oditur'") or die(mysqli_error($koneksi));
 
 
 						//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
@@ -56,7 +56,7 @@ include('config.php');
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
 							<td>
-							<a href="?page=pilih_oditur&kode_registrasi=' . $data['kode_registrasi'] . '" class="btn btn-primary btn-sm">Pilih Oditur</a>
+							<a href="?page=oditur_olah&kode_registrasi=' . $data['kode_registrasi'] . '" class="btn btn-primary btn-sm">Olah Berkas</a>
 							<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
 									'" class="btn btn-primary btn-sm">Download File</a>
 							</td>

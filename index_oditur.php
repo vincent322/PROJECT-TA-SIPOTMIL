@@ -52,6 +52,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_oditur.php?page=tampil_berkas_oditur"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
+                <li><a href="index_oditur.php?page=oditur_cek"><i class="glyphicon glyphicon-tasks"></i> Berkas Oditur <span class="fa fa-chevron"></span></a>
+                </li>
                 <li><a href="index_oditur.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_oditur.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
@@ -86,6 +88,14 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
           case 'tampil_berkas_oditur':
             # code...
             include 'tampil_berkas_oditur.php';
+            break;
+            case 'oditur_olah':
+              # code...
+              include 'oditur_olah.php';
+              break;
+          case 'oditur_cek':
+            # code...
+            include 'oditur_cek.php';
             break;
           case 'data_berkas_oditur':
             # code...
