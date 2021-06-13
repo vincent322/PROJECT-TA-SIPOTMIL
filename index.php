@@ -50,8 +50,6 @@ if (!isset($_SESSION["login"])) {
               <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index.php?page=tampil_berkas"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
-                </li>
                 <li><a href="index.php?page=tambah_berkas_taud"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-user"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
@@ -93,10 +91,6 @@ if (!isset($_SESSION["login"])) {
           case 'tambah_berkas':
             # code...
             include 'tambah_berkas_taud.php';
-            break;
-          case 'data_berkas':
-            # code...
-            include 'data_berkas.php';
             break;
           case 'edit_berkas':
             # code...
