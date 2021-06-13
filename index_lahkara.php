@@ -52,6 +52,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_lahkara.php?page=tampil_berkas_lahkara"><i class="glyphicon glyphicon-tasks"></i> Data Berkas Perkara <span class="fa fa-chevron"></span></a>
                 </li>
+                <li><a href="index_lahkara.php?page=lahkara_cek"><i class="glyphicon glyphicon-tasks"></i> Berkas Lahkara <span class="fa fa-chevron"></span></a>
+                </li>
                 <li><a href="index_lahkara.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_lahkara.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
@@ -90,6 +92,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
           case 'data_berkas_lahkara':
             # code...
             include 'data_berkas_lahkara.php';
+            break;
+          case 'lahkara_cek':
+            # code...
+            include 'lahkara_cek.php';
             break;
           case 'edit_berkas':
             # code...
