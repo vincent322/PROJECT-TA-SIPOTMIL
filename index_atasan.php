@@ -54,6 +54,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_atasan.php?page=kepala_cek"><i class="glyphicon glyphicon-book"></i> Berkas Verifikasi Kepala <span class="fa fa-chevron"></span></a>
                 </li>
+                <li><a href="index_atasan.php?page=berkas_akhir_atasan"><i class="glyphicon glyphicon-book"></i> Cek Berkas Akhir <span class="fa fa-chevron"></span></a>
+                </li>
                 <li><a href="index_atasan.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Ijin Masuk <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-list"></i> History Data Perijinan <span class="fa fa-chevron"></span></a>
@@ -91,14 +93,22 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'tampil_berkas_atasan.php';
             break;
-            case 'kepala_cek':
-              # code...
-              include 'kepala_cek.php';
-              break;
+          case 'kepala_cek':
+            # code...
+            include 'kepala_cek.php';
+            break;
           case 'data_berkas_atasan':
             # code...
             include 'data_berkas_atasan.php';
             break;
+          case 'berkas_akhir_atasan':
+            # code...
+            include 'berkas_akhir_atasan.php';
+            break;
+            case 'setujui_berkas':
+              # code...
+              include 'setujui_berkas.php';
+              break;
           case 'edit_berkas':
             # code...
             include 'edit_berkas.php';
@@ -139,10 +149,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             # code...
             include 'edit_user.php';
             break;
-            case 'pilih_oditur':
-              # code...
-              include 'pilih_oditur.php';
-              break;
+          case 'pilih_oditur':
+            # code...
+            include 'pilih_oditur.php';
+            break;
           default:
             #code...
             include 'home.php';

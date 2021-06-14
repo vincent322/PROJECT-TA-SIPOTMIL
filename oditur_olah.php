@@ -63,7 +63,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
         # move uploaded file to server filepath.
         move_uploaded_file($tmp_name, 'uploads/' . $nama_file);
 
-        $sql = mysqli_query($koneksi, "UPDATE berkas SET catatan='$catatan', status_berkas='Diproses Kepala', files='$nama_file' WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
+        $sql = mysqli_query($koneksi, "UPDATE berkas SET catatan='$catatan', status_berkas='Diproses Kepala Tahap Akhir', files='$nama_file' WHERE kode_registrasi='$kode'") or die(mysqli_error($koneksi));
 
         if ($sql) {
             echo '<script>alert("Berhasil menyimpan data."); document.location="?page=tampil_berkas";</script>';
