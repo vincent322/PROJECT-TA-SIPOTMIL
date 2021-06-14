@@ -55,12 +55,6 @@ $username = $_SESSION['username'];
                     <input type="text" name="Pangkat" class="form-control" value="<?php echo $row['Pangkat']; ?>" readonly required>
                 </div>
             </div>
-            <div class="item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align">Level</label>
-                <div class="col-md-6 col-sm-6">
-                    <input type="text" name="level" class="form-control" value="<?php echo $row['level']; ?>" readonly required>
-                </div>
-            </div>
         </form>
     <?php
     endwhile;

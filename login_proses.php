@@ -30,7 +30,7 @@ if (isset($_POST["login"])) {
       } elseif ($level == "TAUD") {
         echo "<script>alert('Selamat Datang, Staff TAUD!'); window.location=('index_taud.php');</script>";
       } elseif ($level == "Oditur") {
-        echo "<script>alert('Selamat Datang, Staff Oditur!'); window.location=('index_Oditur.php');</script>";
+        echo "<script>alert('Selamat Datang, Staff Oditur!'); window.location=('index_oditur.php');</script>";
       } else {
         echo "<script>alert('Maaf, Login Gagal, Password anda tidak sesuai!');document.location='index.php'</script>";
       }

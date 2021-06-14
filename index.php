@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION["login"])) {
-	header("location: login.php");
-	exit;
+  header("location: login.php");
+  exit;
 }
 ?>
 
@@ -45,24 +45,6 @@ if (!isset($_SESSION["login"])) {
           <div class="clearfix"></div>
 
           <!-- sidebar menu -->
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-            <div class="menu_section">
-              <ul class="nav side-menu">
-                <li><a href="index.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
-                </li>
-                <li><a href="index.php?page=tambah_berkas_taud"><i class="glyphicon glyphicon-log-in"></i> Input Berkas Perkara <span class="fa fa-chevron"></span></a>
-                </li>
-                <li><a href="index.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-user"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
-                </li>
-                <li><a href="index.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
-                </li>
-                <li><a href="index.php?page=logout"><i class="fa fa-sign-out"></i> Logout <span class="fa fa-chevron"></span></a>
-                </li>
-                <li> Hello, <?= $_SESSION['nama_lengkap'] ?> </li>
-                <li> Selamat datang, anda berhasil login sebagai <?= $_SESSION['username'] ?> </li>
-              </ul>
-            </div>
-          </div>
           <!-- /sidebar menu -->
         </div>
       </div>
@@ -77,60 +59,6 @@ if (!isset($_SESSION["login"])) {
       </div>
       <!-- /top navigation -->
 
-      <!-- page content - HALAMAN UTAMA ISI DISINI -->
-      <div class="right_col" role="main">
-        <?php
-        $queries = array();
-        parse_str($_SERVER['QUERY_STRING'], $queries);
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-        switch ($queries['page']) {
-          case 'tampil_berkas':
-            # code...
-            include 'tampil_berkas.php';
-            break;
-          case 'tambah_berkas':
-            # code...
-            include 'tambah_berkas_taud.php';
-            break;
-          case 'edit_berkas':
-            # code...
-            include 'edit_berkas.php';
-            break;
-          case 'edit_berkas_save':
-            # code...
-            include 'edit_berkas.php';
-            break;
-          case 'logout':
-            # code...
-            include 'logout.php';
-            break;
-          case 'profile':
-            # code...
-            include 'profile.php';
-            break;
-          case 'edit_profile':
-            # code...
-            include 'edit_profile.php';
-            break;
-          case 'edit_profile_save':
-            # code...
-            include 'updateprofile.php';
-            break;
-          case 'cetak_berkas':
-            # code...
-            include 'cetak_berkas.php';
-            break;
-            case 'pengajuan_ijin':
-              # code...
-              include 'pengajuan_ijin.php';
-              break;
-          default:
-            #code...
-            include 'home.php';
-            break;
-        }
-        ?>
-      </div>
       <!-- /page content -->
 
       <!-- footer content -->

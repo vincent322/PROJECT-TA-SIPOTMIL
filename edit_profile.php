@@ -44,13 +44,12 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
         $nama                    = $_POST['nama_lengkap'];
         $tanggal                = $_POST['tanggal_lahir'];
         $pangkat                = $_POST['Pangkat'];
-        $level                   = $_POST['level'];
 
         $sql = mysqli_query($koneksi, "UPDATE akses SET password='$password', nama_lengkap='$nama', tanggal_lahir='$tanggal', 
-			Pangkat='$pangkat', level='$level' WHERE username='$user'") or die(mysqli_error($koneksi));
+			Pangkat='$pangkat' WHERE username='$user'") or die(mysqli_error($koneksi));
 
         if ($sql) {
-            echo '<script>alert("Berhasil merubah data."); document.location="index_atasan.php?page=data_pengguna";</script>';
+            echo '<script>alert("Berhasil merubah data."); document.location="?page=profile";</script>';
         } else {
             echo '<div class="alert alert-warning">Gagal melakukan proses edit data.</div>';
         }
@@ -86,17 +85,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
             <label class="col-form-label col-md-3 col-sm-3 label-align">Pangkat</label>
             <div class="col-md-6 col-sm-6">
                 <input type="text" name="Pangkat" class="form-control" value="<?php echo $data['Pangkat']; ?>" required>
-            </div>
-        </div>
-        <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align">Level</label>
-            <div class="col-md-6 col-sm-6">
-                <select class="form-control" type="text" placeholder="level" name="level" autocomplete="off" readonly>
-                    <option value="Atasan">Kepala</option>
-                    <option value="TAUD">Staff TAUD</option>
-                    <option value="Penyidik">Staff Penyidik</option>
-                    <option value="Admin">Administrator</option>
-                </select>
             </div>
         </div>
         <div class="item form-group">
