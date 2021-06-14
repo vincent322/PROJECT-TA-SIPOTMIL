@@ -32,6 +32,7 @@ include('config.php');
 						<th>Kesatuan</th>
 						<th>Jenis Pidana</th>
 						<th>Status Berkas</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -70,6 +71,10 @@ include('config.php');
 							<td>' . $data['kesatuan'] . '</td>
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
+							<td>
+							<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
+									'" class="btn btn-primary btn-sm">Download File</a>
+							</td
 						</tr>
 						';
 								$no++;

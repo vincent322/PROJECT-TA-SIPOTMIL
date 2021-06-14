@@ -28,6 +28,7 @@ include('config.php');
 						<th>Kesatuan</th>
 						<th>Jenis Pidana</th>
 						<th>Status Berkas</th>
+						<th>Catatan</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>
@@ -55,6 +56,7 @@ include('config.php');
 							<td>' . $data['kesatuan'] . '</td>
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
+							<td>' . $data['catatan'] . '</td>
 							<td>
 							<a href="?page=setujui_berkas&kode_registrasi=' . $data['kode_registrasi'] . '" class="btn btn-success btn-sm">Setujui Berkas</a>
 							<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .

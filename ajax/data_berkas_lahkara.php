@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
-  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
+	echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
 }
 
 ?>
@@ -21,6 +21,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 					<th>Kesatuan</th>
 					<th>Jenis Pidana</th>
 					<th>Status Berkas</th>
+					<th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -58,6 +59,10 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 							<td>' . $data['kesatuan'] . '</td>
 							<td>' . $data['jenis_pidana'] . '</td>
 							<td>' . $data['status_berkas'] . '</td>
+							<td>
+							<a href="download_berkas.php?kode_registrasi=' . $data['kode_registrasi'] .
+									'" class="btn btn-primary btn-sm">Download File</a>
+							</td
 						</tr>
 						';
 								$no++;
