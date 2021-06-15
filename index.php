@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
-  header("location: login.php");
-  exit;
+if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+  echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='login.php'</script>";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,6 @@ if (!isset($_SESSION["login"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="assets/images/faviconlogo.png" type="image/ico" />
-
   <title> Sistem Informasi Perkara OTMIL II-09 Semarang</title>
   <!-- Bootstrap -->
   <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -41,14 +40,20 @@ if (!isset($_SESSION["login"])) {
                 </span></a>
             </center>
           </div>
-
           <div class="clearfix"></div>
 
           <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="login.php"><i class="fa fa-sign-out"></i> Login <span class="fa fa-chevron"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <!-- /sidebar menu -->
         </div>
       </div>
-
       <!-- top navigation -->
       <div class="top_nav">
         <div class="nav_menu">
@@ -59,6 +64,20 @@ if (!isset($_SESSION["login"])) {
       </div>
       <!-- /top navigation -->
 
+      <!-- page content - HALAMAN UTAMA ISI DISINI -->
+      <div class="right_col" role="main">
+        <?php
+        $queries = array();
+        parse_str($_SERVER['QUERY_STRING'], $queries);
+        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+        switch ($queries['page']) {
+          default:
+            #code...
+            include 'home.php';
+            break;
+        }
+        ?>
+      </div>
       <!-- /page content -->
 
       <!-- footer content -->
@@ -71,14 +90,12 @@ if (!isset($_SESSION["login"])) {
       <!-- /footer content -->
     </div>
   </div>
-
   <!-- jQuery -->
   <script src="assets/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom Theme Scripts -->
   <script src="assets/js/custom.min.js"></script>
-
 </body>
 
 </html>

@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<form action="index.php?page=tambah_berkas" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
 	<div class="item form-group">
 		<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Registrasi</label>
 		<div class="col-md-6 col-sm-6 ">
