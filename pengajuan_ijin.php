@@ -8,7 +8,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 <?php include('config.php'); ?>
 
 <center>
-    <font size="6">Pengajuan Cuti</font>
+    <font size="6">Pengajuan Izin</font>
 </center>
 <hr>
 <?php
@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     mysqli_query($koneksi, "INSERT INTO ijin VALUES('', '$username', '$tanggal_mulai', '$tanggal_selesai', '$jenis_ijin', '$keterangan', 'Pending')") or die(mysqli_error($koneksi));
 
     // mengalihkan halaman kembali ke index.php
-    echo '<script>alert("Berhasil menyimpan data."); document.location="?page=pengajuan_ijin";</script>';
+    echo '<script>alert("Berhasil mengajukan izin."); document.location="?page=pengajuan_ijin";</script>';
 }
 ?>
 
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
     <div class="item form-group">
-        <label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Cuti</label>
+        <label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Izin</label>
         <div class="col-md-6 col-sm-6">
             <select class="form-control" type="text" placeholder="Jenis Cuti" name="jenis_ijin" autocomplete="off" required>
                 <option value="Sakit">Sakit</option>

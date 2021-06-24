@@ -12,7 +12,7 @@ include('config.php');
 
 <div class="container" style="margin-top:20px">
     <center>
-        <font size="6">Index Data Perijinan Oditurat Militer II/09 Semarang</font>
+        <font size="6">Index Data Perizinan Oditurat Militer II/09 Semarang</font>
     </center>
     <hr>
     <div id="search">
@@ -24,7 +24,7 @@ include('config.php');
                         <th>Nama Lengkap</th>
                         <th>Tanggal Mulai</th>
                         <th>Tanggal Selesai</th>
-                        <th>Jenis Ijin</th>
+                        <th>Jenis Izin</th>
                         <th>Keterangan</th>
                         <th>Status</th>
                     </tr>

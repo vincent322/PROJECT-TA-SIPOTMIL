@@ -56,9 +56,9 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_atasan.php?page=berkas_akhir_atasan"><i class="glyphicon glyphicon-book"></i> Cek Berkas Akhir <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_atasan.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Ijin Masuk <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=data_ijin"><i class="glyphicon glyphicon-tasks"></i> Data Izin Masuk <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-list"></i> History Data Perijinan <span class="fa fa-chevron"></span></a>
+                <li><a href="index_atasan.php?page=history_ijin"><i class="glyphicon glyphicon-list"></i> History Data Perizinan <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_atasan.php?page=data_pengguna"><i class="glyphicon glyphicon-list-alt"></i> Data Pengguna Sistem <span class="fa fa-chevron"></span></a>
                 </li>

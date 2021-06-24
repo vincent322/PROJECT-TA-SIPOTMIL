@@ -73,9 +73,10 @@
             <div class="form-group">
                 <label for="level">Level</label>
                 <select class="form-control" type="text" placeholder="Input Pangkat" name="level" id="level" autocomplete="off" required>
-                    <option value="Atasan">Kepala</option>
+                    <option value="Atasan">Atasan</option>
                     <option value="TAUD">Staff TAUD</option>
                     <option value="Lahkara">Staff Lahkara</option>
+                    <option value="Oditur">Staff Oditur</option>
                 </select>
             </div>
             <button type="submit" name="registrasi" class="btn btn-primary">Registrasi</button>

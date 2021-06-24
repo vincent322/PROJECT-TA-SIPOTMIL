@@ -54,7 +54,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_oditur.php?page=oditur_cek"><i class="glyphicon glyphicon-tasks"></i> Berkas Oditur <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_oditur.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
+                <li><a href="index_oditur.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Izin <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_oditur.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>

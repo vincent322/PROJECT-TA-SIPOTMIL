@@ -54,7 +54,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                 </li>
                 <li><a href="index_lahkara.php?page=lahkara_cek"><i class="glyphicon glyphicon-tasks"></i> Berkas Lahkara <span class="fa fa-chevron"></span></a>
                 </li>
-                <li><a href="index_lahkara.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Ijin <span class="fa fa-chevron"></span></a>
+                <li><a href="index_lahkara.php?page=pengajuan_ijin"><i class="glyphicon glyphicon-tasks"></i> Form Pengajuan Izin <span class="fa fa-chevron"></span></a>
                 </li>
                 <li><a href="index_lahkara.php?page=profile"><i class="glyphicon glyphicon-user"></i> Profile <span class="fa fa-chevron"></span></a>
                 </li>
